@@ -19,7 +19,7 @@ import lombok.Setter;
 public class Vehicle {
   @Id
   @GeneratedValue
-  private int idVehicle;
+  private long idVehicle;
   private String registrationPlate;
   private int manufacturingYear;
   @ManyToOne

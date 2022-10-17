@@ -19,7 +19,7 @@ import lombok.Setter;
 public class Shopvehiclebrand {
   @Id
   @GeneratedValue
-  private int idShopvehiclebrand;
+  private long idShopvehiclebrand;
   @OneToOne
   @JoinColumn(name = "id_shops")
   private Shop idShops;

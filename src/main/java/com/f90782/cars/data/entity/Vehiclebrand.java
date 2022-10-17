@@ -17,6 +17,6 @@ import lombok.Setter;
 public class Vehiclebrand {
   @Id
   @GeneratedValue
-  private int idVehiclebrand;
+  private long idVehiclebrand;
   private String name;
 }

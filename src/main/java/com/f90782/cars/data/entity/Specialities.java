@@ -17,6 +17,6 @@ import lombok.Setter;
 public class Specialities {
   @Id
   @GeneratedValue
-  private int idSpecialities;
+  private long idSpecialities;
   private String name;
 }

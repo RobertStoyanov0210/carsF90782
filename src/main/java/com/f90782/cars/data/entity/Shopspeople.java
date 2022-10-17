@@ -20,7 +20,7 @@ import lombok.Setter;
 public class Shopspeople {
   @Id
   @GeneratedValue
-  private int idShopspeople;
+  private long idShopspeople;
   @ManyToOne
   @JoinColumn(name = "id_shops")
   private Shop idShops;

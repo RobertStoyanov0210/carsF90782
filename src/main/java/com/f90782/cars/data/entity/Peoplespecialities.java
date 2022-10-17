@@ -20,7 +20,7 @@ import lombok.Setter;
 public class Peoplespecialities {
   @Id
   @GeneratedValue
-  private int idPeoplespecialities;
+  private long idPeoplespecialities;
   @OneToOne
   @JoinColumn(name = "id_people")
   private People idPeople;

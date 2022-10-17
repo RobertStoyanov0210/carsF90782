@@ -19,7 +19,7 @@ import lombok.Setter;
 public class User {
   @Id
   @GeneratedValue
-  private int idUser;
+  private long idUser;
   private String userName;
   private String userPassword;
   @OneToOne

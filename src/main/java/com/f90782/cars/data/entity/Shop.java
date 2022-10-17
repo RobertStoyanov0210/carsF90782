@@ -17,6 +17,6 @@ import lombok.Setter;
 public class Shop {
   @Id
   @GeneratedValue
-  private int idShop;
+  private long idShop;
   private String shopName;
 }

@@ -17,7 +17,7 @@ import lombok.Setter;
 public class People {
   @Id
   @GeneratedValue
-  private int idPeople;
+  private long idPeople;
   private String firstName;
   private String lastName;
   private boolean isMechanic;

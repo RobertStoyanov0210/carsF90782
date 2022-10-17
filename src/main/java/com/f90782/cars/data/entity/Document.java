@@ -20,7 +20,7 @@ import lombok.Setter;
 public class Document {
   @Id
   @GeneratedValue
-  private int idDocument;
+  private long idDocument;
   @OneToOne
   @JoinColumn(name = "id_reservation")
   private Reservation idReservation;

@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Reservation {
   @Id
   @GeneratedValue
-  private int idReservation;
+  private long idReservation;
   @ManyToOne
   @JoinColumn(name = "id_shops")
   private Shop idShops;
