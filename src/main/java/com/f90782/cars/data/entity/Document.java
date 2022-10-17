@@ -1,7 +1,11 @@
 package com.f90782.cars.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -15,8 +19,13 @@ import lombok.Setter;
 @Table(name = "documents")
 public class Document {
   @Id
+  @GeneratedValue
   private int idDocument;
-  private int idReservation;
-  private int idPeople;
+  @OneToOne
+  @JoinColumn(name = "id_reservation")
+  private Reservation idReservation;
+  @ManyToOne
+  @JoinColumn(name = "id_people")
+  private People idPeople;
   private float price;
 }

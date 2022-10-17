@@ -3,7 +3,10 @@ package com.f90782.cars.data.entity;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -17,9 +20,16 @@ import lombok.Setter;
 @Table(name = "reservations")
 public class Reservation {
   @Id
+  @GeneratedValue
   private int idReservation;
-  private int idShops;
-  private int idVehicle;
-  private int idSpecialities;
+  @ManyToOne
+  @JoinColumn(name = "id_shops")
+  private Shop idShops;
+  @ManyToOne
+  @JoinColumn(name = "id_vehicle")
+  private Vehicle idVehicle;
+  @ManyToOne
+  @JoinColumn(name = "id_specialities")
+  private Specialities idSpecialities;
   private Date date;
 }

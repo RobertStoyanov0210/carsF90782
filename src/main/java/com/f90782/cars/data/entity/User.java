@@ -1,7 +1,10 @@
 package com.f90782.cars.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -15,9 +18,12 @@ import lombok.Setter;
 @Table(name = "users")
 public class User {
   @Id
+  @GeneratedValue
   private int idUser;
   private String userName;
   private String userPassword;
-  private int idPeople;
+  @OneToOne
+  @JoinColumn(name = "id_people")
+  private People idPeople;
 
 }

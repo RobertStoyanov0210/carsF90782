@@ -1,6 +1,7 @@
 package com.f90782.cars.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,6 +16,7 @@ import lombok.Setter;
 @Table(name = "shops")
 public class Shop {
   @Id
+  @GeneratedValue
   private int idShop;
   private String shopName;
 }

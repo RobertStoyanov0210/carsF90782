@@ -1,7 +1,11 @@
 package com.f90782.cars.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -15,7 +19,12 @@ import lombok.Setter;
 @Table(name = "people_specialities")
 public class Peoplespecialities {
   @Id
+  @GeneratedValue
   private int idPeoplespecialities;
-  private int idPeople;
-  private int idSpecialities;
+  @OneToOne
+  @JoinColumn(name = "id_people")
+  private People idPeople;
+  @ManyToOne
+  @JoinColumn(name = "id_specialities")
+  private Specialities idSpecialities;
 }
