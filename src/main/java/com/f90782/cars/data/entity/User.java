@@ -2,6 +2,7 @@ package com.f90782.cars.data.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -18,7 +19,7 @@ import lombok.Setter;
 @Table(name = "users")
 public class User {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private long idUser;
   private String userName;
   private String userPassword;
