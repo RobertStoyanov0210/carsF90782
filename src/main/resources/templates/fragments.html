@@ -7,17 +7,16 @@ and open the template in the editor.
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="head">
-  <title>School Management</title>
   <meta charset="UTF-8">
   <link href="/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}" />
 </head>
-<header th:fragment="header">
-  <h1>School Management System</h1>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navigation">
+<header th:fragment="header" style="background-color: #088DA5;">
+  <nav class="navbar navbar-expand-lg navbar-dark" th:fragment="navigation">
+    <a class="navbar-brand" href="#">F90782Cars</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/vehicles">Vehicles</a>
+          <a class="nav-link" href="/vehicles">List of Vehicles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/vehicles/create-vehicle">Create Vehicle</a>
@@ -27,7 +26,7 @@ and open the template in the editor.
   </nav>
 </header>
 <footer page-footer font-small>
-  <div class="footer-copyright text-center py-3">© 2020 Copyright: CARSF90782</div>
+  <div class="footer-copyright text-center py-3">©2022 Copyright: CARSF90782</div>
 </footer>
 
 </html>

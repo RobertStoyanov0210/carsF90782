@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<body style="background-color: #056273; color: white;">
+  <header th:replace="fragments :: header"></header>
+  <h4>Registered vehicles:</h4>
+  <div class="col-6">
+    <h3 th:unless="${vehicles} and ${vehicles.size()}">There are no vehicles!</h3>
+    <table th:if="${vehicles.size()>0}" class="table table-hover">
+      <th>Id</th>
+      <th>Registration Plate</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <tr th:each="vehicle : ${vehicles}">
+        <td th:text="${vehicle.idVehicle}"></td>
+        <td th:text="${vehicle.registrationPlate}"></td>
+        <td><a class="btn btn-info" th:href="@{'/vehicles/edit-vehicle/'+${vehicle.idVehicle}}">Edit</a></td>
+        <td><a class="btn btn-danger" th:href="@{'/vehicles/delete/'+${vehicle.idVehicle}}">Delete</a></td>
+      </tr>
+    </table>
+  </div>
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+
+</html>
