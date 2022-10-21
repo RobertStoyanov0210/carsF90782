@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+  <title>School Management</title>
+  <meta charset="UTF-8">
+  <link href="/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+</head>
+<header th:fragment="header">
+  <h1>School Management System</h1>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navigation">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/vehicles">Vehicles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/vehicles/create-vehicle">Create Vehicle</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<footer page-footer font-small>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright: CARSF90782</div>
+</footer>
+
+</html>
