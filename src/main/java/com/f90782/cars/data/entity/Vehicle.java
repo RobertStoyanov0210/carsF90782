@@ -1,5 +1,6 @@
 package com.f90782.cars.data.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,10 +24,10 @@ public class Vehicle {
   private long idVehicle;
   private String registrationPlate;
   private int manufacturingYear;
-  @ManyToOne
+  @ManyToOne(cascade = { CascadeType.ALL })
   @JoinColumn(name = "id_vehiclesmodels")
   private Vehiclemodel idVehiclesmodels;
-  @ManyToOne
+  @ManyToOne(cascade = { CascadeType.ALL })
   @JoinColumn(name = "id_people")
   private People idPeople;
 

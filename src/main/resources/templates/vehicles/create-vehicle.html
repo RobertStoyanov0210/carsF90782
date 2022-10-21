@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+  <header th:replace="fragments :: header"></header>
+  <h4>Register the Vehicle</h4>
+  <div class="col-6">
+    <form action="#" th:action="@{/vehicles/create}" th:object="${vehicle}">
+      <div class="form-group">
+        <label for="registrationPlate">Registration Plate</label>
+        <input class="form-control" type="text" th:field="*{registrationPlate}" placeholder="Registration Plate"
+          id="registrationPlate">
+
+        <label for="registrationPlate">Year</label>
+        <input class="form-control" type="number" th:field="*{manufacturingYear}" placeholder="Year"
+          id="manufacturingYear">
+
+        <label for="models">Model</label>
+        <select class="w-100">
+          <option th:each="model : ${models}" value="${model.idVehiclemodel}" th:text="${model.name}"></option>
+        </select>
+
+        <label for="registrationPlate">Person</label>
+        <input class="form-control" type="number" th:field="*{idPeople}" placeholder="Person" id="idPeople">
+
+      </div>
+      <button type="submit" class="btn btn-primary">Save Vehicle</button>
+    </form>
+  </div>
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+
+</html>

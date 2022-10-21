@@ -1,5 +1,6 @@
 package com.f90782.cars.data.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +23,7 @@ public class Vehiclemodel {
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private long idVehiclemodel;
   private String name;
-  @ManyToOne
+  @ManyToOne(cascade = { CascadeType.ALL })
   @JoinColumn(name = "id_vehiclesbrand")
   private Vehiclebrand idVehiclesbrand;
 

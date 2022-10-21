@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+  <header th:replace="fragments :: header"></header>
+  <h4>Register the Vehicle</h4>
+  <div class="col-6">
+    <form action="#" th:action="@{/vehicles/update/{id}(id=${vehicle.idVehicle})}" th:object="${vehicle}" method="post">
+      <div class="form-group">
+        <label for="registrationPlate">Registration Plate</label>
+        <input class="form-control" type="text" th:field="*{registrationPlate}" placeholder="Registration Plate"
+          id="registrationPlate">
+
+        <label for="registrationPlate">Year</label>
+        <input class="form-control" type="number" th:field="*{manufacturingYear}" placeholder="Year"
+          id="manufacturingYear">
+
+        <label for="registrationPlate">Brand</label>
+        <input class="form-control" type="text" th:field="*{idVehiclesmodels.idVehiclesbrand.name}">
+
+        <label for="registrationPlate">Model</label>
+        <input class="form-control" type="text" th:field="*{idVehiclesmodels.name}">
+
+        <label for="registrationPlate">Person</label>
+        <input class="form-control" type="text" th:field="*{idPeople.firstName}">
+
+      </div>
+      <button type="submit" class="btn btn-primary">Update Vehicle</button>
+    </form>
+  </div>
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+
+</html>
