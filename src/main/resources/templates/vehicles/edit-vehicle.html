@@ -3,28 +3,33 @@
 
 <head th:replace="fragments :: head"></head>
 
-<body>
+<body style="background-color: #056273; color: white;">
   <header th:replace="fragments :: header"></header>
   <h4>Register the Vehicle</h4>
   <div class="col-6">
     <form action="#" th:action="@{/vehicles/update/{id}(id=${vehicle.idVehicle})}" th:object="${vehicle}" method="post">
       <div class="form-group">
-        <label for="registrationPlate">Registration Plate</label>
+        <input type="hidden" th:field="*{idVehicle}">
+        <label>Registration Plate</label>
         <input class="form-control" type="text" th:field="*{registrationPlate}" placeholder="Registration Plate"
           id="registrationPlate">
 
-        <label for="registrationPlate">Year</label>
+        <label>Year</label>
         <input class="form-control" type="number" th:field="*{manufacturingYear}" placeholder="Year"
           id="manufacturingYear">
 
-        <label for="registrationPlate">Brand</label>
-        <input class="form-control" type="text" th:field="*{idVehiclesmodels.idVehiclesbrand.name}">
+        <label>Brand</label>
+        <input class="form-control" type="text" th:field="*{idVehiclesmodels.idVehiclesbrand.idVehiclebrand}">
+        <input type="hidden" th:field="*{idVehiclesmodels.idVehiclesbrand.brandName}">
 
-        <label for="registrationPlate">Model</label>
-        <input class="form-control" type="text" th:field="*{idVehiclesmodels.name}">
+        <label>Model</label>
+        <input class="form-control" type="text" th:field="*{idVehiclesmodels.idVehiclemodel}">
+        <input type="hidden" th:field="*{idVehiclesmodels.modelName}">
 
-        <label for="registrationPlate">Person</label>
-        <input class="form-control" type="text" th:field="*{idPeople.firstName}">
+        <label>Person</label>
+        <input class="form-control" type="text" th:field="*{idPeople}">
+
+        <input type="hidden" th:field="*{deleted}">
 
       </div>
       <button type="submit" class="btn btn-primary">Update Vehicle</button>

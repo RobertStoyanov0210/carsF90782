@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -22,8 +23,8 @@ public class Vehiclemodel {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private long idVehiclemodel;
-  private String name;
-  @ManyToOne(cascade = { CascadeType.ALL })
+  private String modelName;
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "id_vehiclesbrand")
   private Vehiclebrand idVehiclesbrand;
 

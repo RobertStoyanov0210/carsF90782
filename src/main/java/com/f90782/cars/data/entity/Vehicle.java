@@ -24,11 +24,12 @@ public class Vehicle {
   private long idVehicle;
   private String registrationPlate;
   private int manufacturingYear;
-  @ManyToOne(cascade = { CascadeType.ALL })
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "id_vehiclesmodels")
   private Vehiclemodel idVehiclesmodels;
-  @ManyToOne(cascade = { CascadeType.ALL })
+  @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "id_people")
   private People idPeople;
+  private boolean deleted = false;
 
 }

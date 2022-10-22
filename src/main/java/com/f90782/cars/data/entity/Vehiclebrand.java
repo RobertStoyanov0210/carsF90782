@@ -1,9 +1,11 @@
 package com.f90782.cars.data.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -19,5 +21,5 @@ public class Vehiclebrand {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private long idVehiclebrand;
-  private String name;
+  private String brandName;
 }

@@ -3,7 +3,7 @@
 
 <head th:replace="fragments :: head"></head>
 
-<body>
+<body style="background-color: #056273; color: white;">
   <header th:replace="fragments :: header"></header>
   <h4>Register the Vehicle</h4>
   <div class="col-6">
@@ -19,7 +19,8 @@
 
         <label for="models">Model</label>
         <select class="w-100">
-          <option th:each="model : ${models}" value="${model.idVehiclemodel}" th:text="${model.name}"></option>
+          <option id="models" th:each="model : ${models}" value="${model.idVehiclemodel}" th:text="${model.name}">
+          </option>
         </select>
 
         <label for="registrationPlate">Person</label>

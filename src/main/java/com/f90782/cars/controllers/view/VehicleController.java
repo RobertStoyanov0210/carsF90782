@@ -15,7 +15,6 @@ import com.f90782.cars.services.VehicleService;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 @AllArgsConstructor
@@ -49,12 +48,19 @@ public class VehicleController {
   @GetMapping("/edit-vehicle/{id}")
   public String showEditVehicleForm(Model model, @PathVariable long id) {
     model.addAttribute("vehicle", vehicleService.getVehicle(id));
+
     return "/vehicles/edit-vehicle";
   }
 
   @PostMapping("/update/{id}")
   public String updateVehicle(Model model, @PathVariable long id, Vehicle vehicle) {
     vehicleService.updateVehicle(id, vehicle);
+    return "redirect:/vehicles";
+  }
+
+  @GetMapping("delete/{id}")
+  public String deleteVehicle(@PathVariable long id) {
+    vehicleService.deleteVehicle(id);
     return "redirect:/vehicles";
   }
 
